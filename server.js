@@ -35,13 +35,10 @@ hbs.registerHelper('screamIt', (text) => {
 })
 
 app.get('/', (req, res) => {
-  res.send({
-    name: 'Monthon',
-    likes: [
-      'Biking',
-      'Cities'
-    ]
-  })   
+  res.render('home.hbs', {
+    pageTitle: 'Home Page',
+    welcomeMessage: 'Welcom to website',
+  })
 })
 
 app.get('/about', (req, res) => {
@@ -50,10 +47,10 @@ app.get('/about', (req, res) => {
   })
 })
 
-app.get('/home', (req, res) => {
-  res.render('home.hbs', {
-    pageTitle: 'Home Page',
-    welcomeMessage: 'Welcom to website',
+app.get('/project', (req, res) => {
+  res.render('project.hbs', {
+    pageTitle: 'Project Page',
+    welcomeMessage: 'Welcom to my portfolio',
   })
 })
 
